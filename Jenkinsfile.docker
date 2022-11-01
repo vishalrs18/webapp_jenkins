@@ -1,7 +1,7 @@
-node ('docker-client') {
+node ('maven') {
     
       stage ('Code from SCM') {
-        git credentialsId: 'Git_Hub', url: 'https://github.com/vinay1074/web_app.git'
+        git credentialsId: 'f2a21285-619c-43bf-9652-5fa30c27c559', url: 'https://github.com/vishalrs18/webapp_jenkins'
       }
       stage ('Build') {
         sh '''mvn clean install'''
@@ -9,6 +9,6 @@ node ('docker-client') {
       stage ('deploy to docker container')
     {
         sh '''docker build -t app:1 .
-        docker run -d -p 8080:8080 --name web_app app:1'''
+        docker run -d -p 8080:8080 --name web_app1 app:1'''
     }
 }
