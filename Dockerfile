@@ -1,5 +1,4 @@
-FROM ubuntu
+FROM maven
 WORKDIR source/
-COPY . source/
-RUN apt install maven
+COPY . .
 CMD ["mvn", "clean", "install"]
