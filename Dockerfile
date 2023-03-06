@@ -8,7 +8,7 @@ CMD ["mvn", "clean", "install"]
 #
 # Package stage
 #
-FROM java
+FROM openjdk:11-jre-slim
 COPY --from=build /source/target/web_app.war .
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","/source/target/web_app.war"]
