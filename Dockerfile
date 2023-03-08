@@ -4,7 +4,7 @@
 FROM maven AS build
 WORKDIR source/
 COPY . .
-CMD ["mvn", "clean", "install"]
+RUN mvn clean install
 #
 # Package stage
 #
