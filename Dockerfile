@@ -8,9 +8,9 @@ CMD ["mvn", "clean", "install"]
 #
 # Package stage
 #
-FROM openjdk:11-jre-slim
-COPY --from=build /source/target/web_app.war .
+FROM tomcat:8.5.35-jre10
+COPY --from=build ./target/web_app.war /usr/local/tomcat/webapps/
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","/source/target/web_app.war"]
-
+RUN chmod +x /usr/local/tomcat/bin/catalina.sh
+CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
 
