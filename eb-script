@@ -1,3 +1,3 @@
-!#/bin/bash
+#!/bin/bash
 eb init webapp1 -r ap-northeast-1
 eb deploy
