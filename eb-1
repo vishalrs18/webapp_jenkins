@@ -1,0 +1,3 @@
+#!/bin/bash
+cd Webapp1-env
+./eb-script
